@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image List</title>
+  <style>
+    .item {
+      display: inline-block;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+
+    .selected {
+      border-color: red;
+    }
+    #submit-button {
+    background: hsl(46, 100%, 50%);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    display: none;
+      position: fixed;
+      cursor: pointer;
+}
+#submit-button {
+  background: #30e3cb;
+}
+
+    .row::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .column {
+      float: left;
+      width: 33.33%;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <h2>Select The Service You Want</h2>
+
+  <div id="image-list">
+    <div class="row">
+      <div class="column">
+        <div class="item" onclick="selectImage(this)">
+          <img src="images/1.jpg" width="150" height="150" alt="Image 1">
+        </div>
+        <p><b>Dressing Wounds 🤕</b></p>
+      </div>
+      <div class="column">
+        <div class="item" onclick="selectImage(this)">
+          <img src="images/2.jpg" width="150" height="150" alt="Image 2">
+        </div>
+        <p><b>Injection 💉</b></p>
+      </div>
+      <div class="column">
+        <div class="item" onclick="selectImage(this)">
+          <img src="images/3.jpg" width="150" height="150" alt="Image 3">
+        </div>
+        <p><b>Blood Pressure Measurement 🩸</b></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="item" onclick="selectImage(this)">
+          <img src="images/4.jpg" width="150" height="150" alt="Image 4">
+        </div>
+        <p><b>Urinary Catheterization 💊 </b></p>
+      </div>
+      <div class="column">
+        <div class="item" onclick="selectImage(this)">
+          <img src="images/5.jpg" width="150" height="150" alt="Image 5">
+        </div>
+        <p><b>Cannula installation 💊</b></p>
+      </div>
+      <div class="column">
+        <div class="item" onclick="selectImage(this)">
+          <img src="images/6.jpg" width="150" height="150"alt="Image 6">
+        </div>
+        <p><b>Analysis sample 📏</b></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="item" onclick="selectImage(this)">
+          <img src="images/7.jpg" width="150" height="150" alt="Image 7">
+        </div>
+        <p><b>Suspension of Medical Solutions 💉</b></p>
+      </div>
+      <div class="column">
+        <div class="item" onclick="selectImage(this)">
+          <img src="images/as.png" width="150" height="150" alt="Image 8">
+        </div>
+        <p><b>Patient Monitoring 🩺</b></p>
+      </div>
+      <div class="column">
+        <div class="item" onclick="selectImage(this)">
+          <img src="images/8.jpg" width="150" height="150" alt="Image 9">
+        </div>
+        <p><b>Measuring diabetes and pressure 📏</b></p>
+      </div>
+    </div>
+  </div>
+
+  <a href="map.html">
+
+  <button id="submit-button" onclick="closeList()">Submit</button>
+      
+</a>
+
+  <script>
+    let selectedImage = null;
+
+    function selectImage(item) {
+      if (selectedImage) {
+        selectedImage.classList.remove("selected");
+      }
+
+      item.classList.add("selected");
+      selectedImage = item;
+
+      document.getElementById("submit-button").style.display = "block";
+    }
+
+    function closeList() {
+      if (selectedImage) {
+        selectedImage.classList.remove("selected");
+        selectedImage = null;document.getElementById("submit-button").style.display = "none";
+    }
+}
+  </script>
+</body>
+</html>
+     
